@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Summerville Seaworld</title>
+	</head>
+	<body>
+<script type="text/javascript">
+
+			// FileName:Watford_Program_2.html
+			// Programer: Katelyn Watford
+			// Purpose: To build a pond for summerville seaworld
+				
+				//Global Var:
+				var WATER_HEIGHT = 11; 
+				var PER_SQUARE_POND = 37; 
+				var PER_SQUARE_DOME = 27.5; 
+				var CHAIR_WIDTH = 5.5; 
+				var userFirstName;
+				var pondDiameter;
+				var domeDiameter;
+				var pondConcreteArea;
+				var domeConcreteArea;
+				var domeMinusPondConcreteArea; 
+				var pondConcreteCost;
+				var domeConcreteCost;
+				var waterVolume; 
+				var numSeats;
+				var seatingArea; 
+				var pondRadius; 
+				var domeRadius;
+				
+				//Input:
+				userFirstName = prompt("What is your first name?");
+				pondDiameter = prompt("What is the ponds diameter?");
+				
+				//Calculations:
+				pondRadius = pondDiameter / 2;
+				pondConcreteArea = Math.PI * (pondRadius * pondRadius);
+				
+				domeDiameter = pondDiameter * 3;
+				domeRadius = domeDiameter / 2;
+				domeConcreteArea = Math.PI * (domeRadius * domeRadius);
+				
+				domeMinusPondConcreteArea = domeConcreteArea - pondConcreteArea;
+				
+				seatingArea = domeMinusPondConcreteArea * .5;
+				
+				numSeats = Math.floor(seatingArea / CHAIR_WIDTH);
+				
+				
+				waterVolume = Math.PI * (pondRadius * pondRadius) * WATER_HEIGHT;
+				
+				pondConcreteCost = pondConcreteArea * PER_SQUARE_POND;
+				domeConcreteCost = domeMinusPondConcreteArea * PER_SQUARE_DOME;
+				
+				
+				//Output:
+				document.write ("Hello" + "," + userFirstName);
+				document.write ("<br>The diameter of the pond is:" + " " + pondDiameter);
+				document.write ("<br>The diameter of the dome is:" + " " + domeDiameter);
+				document.write ("<br>the pond conrete area is:" + " " + pondConcreteArea.toFixed(2));
+				document.write ("<br>The dome concrete area is:" + " " + domeMinusPondConcreteArea.toFixed(2));
+				document.write ("<br>The pond concrete cost is:" + " " + "$" + pondConcreteCost.toFixed(2));
+				document.write ("<br>The dome concrete cost is:" + " " + "$" + domeConcreteCost.toFixed(2));
+				document.write ("<br>The water volume of the pond is:" + " " + waterVolume.toFixed(2));
+				document.write ("<br>The seating area is:" + " " + seatingArea.toFixed(2));
+				document.write ("<br>the number of seats available are:" + " " + numSeats);
+</script>
+
+	</body>
+	
+</html>
+
